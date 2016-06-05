@@ -31,9 +31,9 @@ def read_config():
         help='Article contents'
     )
     parser.add_argument(
-        '--lan2projects', type=str, nargs='+', default=['Springs MVC',
+        '--lan1projects', type=str, nargs='+', default=['Springs MVC',
                                                         'Tomcat'],
-        help='List the projects you love in language2'
+        help='List the projects you was working on in language1'
         )
     parser.add_argument(
         '--output', type=str, default='',
@@ -90,7 +90,7 @@ def run():
         language1_hello_world=hello1,
         language2_hello_world=hello2,
         language3=args.lan3,
-        project_names=', '.join(args.lan2projects)
+        project_names=', '.join(args.lan1projects)
     )
     if args.output:
         save_template(args.output, fmt)
