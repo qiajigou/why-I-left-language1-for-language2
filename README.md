@@ -8,6 +8,12 @@ https://medium.com/@igorhorst/why-i-left-language-1-for-language-2-1d2fa418cd4c#
 python wuliao.py --lan1=Java --lan2=Python
 ```
 
+or
+
+```
+python wuliao.py -1=Java -2=Python
+```
+
 Add your templates!
 
 ```
@@ -19,6 +25,18 @@ Get more help by using:
 ```
 python wuliao.py --help
 ```
+
+# C? WTF!
+
+Yes! We are so boring that we wrote this project by C, this is really... I don't know what to say but I am not the one who good at C.
+
+OK, Just enjoy yourself!
+
+```
+./wuliao -1 Java -2 Python -3 Python3
+```
+
+TIPS: You can make this project yourself!
 
 # Output
 
