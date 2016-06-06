@@ -10,32 +10,39 @@ def read_config():
     parser = argparse.ArgumentParser(
         description='Why I lfeft language1 to language2')
     parser.add_argument(
+        '-0',
         '--lan0', type=str, default='C',
         help='First disappointed with what language'
-        )
+    )
     parser.add_argument(
+        '-1',
         '--lan1', type=str, default='Java',
         help='Left language0 you found a new language '
         'but gona leave this language'
-        )
+    )
     parser.add_argument(
+        '-2',
         '--lan2', type=str, default='Python',
         help='You found the very language you love'
-        )
+    )
     parser.add_argument(
+        '-3',
         '--lan3', type=str, default='GO',
         help='If that language also disappointed you We have another choise...'
-        )
+    )
     parser.add_argument(
+        '-t',
         '--temp', type=str, default=CURRENT_DIR + '/templates/en/article.md',
         help='Article contents'
     )
     parser.add_argument(
+        '-p',
         '--lan1projects', type=str, nargs='+', default=['Springs MVC',
                                                         'Tomcat'],
         help='List the projects you was working on in language1'
-        )
+    )
     parser.add_argument(
+        '-o',
         '--output', type=str, default='',
         help='Save this article to you file'
     )

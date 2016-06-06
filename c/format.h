@@ -1,0 +1,1 @@
+char *replace(char *template, dict *d);
