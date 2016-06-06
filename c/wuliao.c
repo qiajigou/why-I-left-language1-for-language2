@@ -2,7 +2,7 @@
 #include <getopt.h>
 
 #include "dict.h"
-#include "fs.h"
+#include "tmp.h"
 #include "format.h"
 
 

@@ -5,7 +5,7 @@
 #include <dirent.h>
 #include <ctype.h>
 
-#include "fs.h"
+#include "tmp.h"
 
 char *read_template(char* template_path)
 {
