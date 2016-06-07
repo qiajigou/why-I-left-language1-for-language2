@@ -1,25 +1,14 @@
-Origin idea from 《Why I Left [Language_1] For [Language_2]》.
+Origin idea from 《[Why I Left Language1 For Language2](https://medium.com/@igorhorst/why-i-left-language-1-for-language-2-1d2fa418cd4c#.jn9fhmhn8)》.
 
-https://medium.com/@igorhorst/why-i-left-language-1-for-language-2-1d2fa418cd4c#.jn9fhmhn8
-
-# Usage
-```
-python wuliao.py -1=Java -2=Python -3=Python3
-```
-
-Add your templates!
+# Install
 
 ```
-python wuliao.py -1=Java -2=Python -t=templates/en/justno.md
+make && make install
 ```
 
-Get more help by using:
+or Just checkout this project and run.
 
-```
-python wuliao.py --help
-```
-
-# C? WTF!
+# wuliao(1)
 
 Yes! We are so boring that we wrote this project by C, this is really... I don't know what to say but I am not the one who good at C.
 
@@ -35,7 +24,27 @@ Add your templates!
 ./wuliao -1=Java -2=Python -3=Python3 -t=templates/en/justno.md
 ```
 
-TIPS: You can make this project yourself!
+**TIPS**: You can make this project yourself!
+
+# Python
+
+There is a Python implementation so you can use it on web (or like a toy). This is simple and easy.
+
+```
+python wuliao.py -1=Java -2=Python -3=Python3
+```
+
+Add your templates!
+
+```
+python wuliao.py -1=Java -2=Python -t=templates/en/justno.md
+```
+
+Get more help by using:
+
+```
+python wuliao.py --help
+```
 
 # Output
 
