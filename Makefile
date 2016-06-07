@@ -18,7 +18,7 @@ RM      = rm -f
 MKDIR   = mkdir -p
 endif
 
-CFLAGS = -Wall -g
+CFLAGS = -std=c99 -Ideps -Wall -g
 SRC  = $(wildcard c/*.c)
 DEPS = $(wildcard deps/*/*.c)
 OBJ = $(DEPS:.c=.o)

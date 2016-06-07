@@ -41,20 +41,23 @@ char *read_template(char* template_path)
 
 char *strtolower(char *s)
 {
-  char *d = (char *)malloc(strlen(s));
-  for(int i = 0; s[i]; i++){
+  char *d = (char *)malloc(strlen(s+1));
+  int i = 0;
+  for(i = 0; s[i]; i++){
     d[i] = tolower(s[i]);
   }
+  d[i] = '\0';
   return d;
 }
 
 char *firstofchararry(char *s)
 {
   char *c = (char *)malloc(2);
-  for(int i=0; i<1; i++){
+  int i = 0;
+  for(i=0; i<1; i++){
     c[i] = tolower(s[i]);
   }
-  free(c);
+  c[1] = '\0';
   return c;
 }
 
@@ -64,13 +67,17 @@ int compare(char *language, char* language_file)
   char *lf = strtolower(language_file);
   lf = strtok(lf, ".");
 
-  if ( lan && lf && strcmp(lan, lf) == 0 )
+  int cpr = -1;
+  int r = 0;
+  if ( lan && lf)
   {
-    free(lan);
-    free(lf);
-    return 1;
+    cpr = strcmp(lan, lf);
   }
-  return 0;
+  if ( cpr == 0 )
+  {
+    r = 1;
+  }
+  return r;
 }
 
 char *search_by_language(char *language)
@@ -103,7 +110,8 @@ char *search_by_language(char *language)
         break;
       }
 
-      if ( compare(language, ep->d_name) )
+      int cpr = compare(language, ep->d_name);
+      if ( cpr )
       {
         fd = ep->d_name;
         break;
@@ -120,10 +128,7 @@ char *search_by_language(char *language)
     fp = malloc(strlen(lf) + strlen(fd) + 1);
     strcpy(fp, lf);
     strcat(fp, fd);
-    free(lf);
-    free(fp);
   }
-
   return fp;
 }
 
@@ -134,6 +139,10 @@ char *read_helloworld(char *language)
   if (path)
   {
     hello = read_template(path);
+  }
+  else
+  {
+    printf("path is null!");
   }
   return hello;
 }
