@@ -10,7 +10,7 @@ python wuliao.py -1=Java -2=Python -3=Python3
 Add your templates!
 
 ```
-python wuliao.py -1=Java -2=Python --temp=/path --output=/path/out
+python wuliao.py -1=Java -2=Python -t=templates/en/justno.md
 ```
 
 Get more help by using:
@@ -27,6 +27,12 @@ OK, Just enjoy yourself!
 
 ```
 ./wuliao -1=Java -2=Python -3=Python3
+```
+
+Add your templates!
+
+```
+./wuliao -1=Java -2=Python -3=Python3 -t=templates/en/justno.md
 ```
 
 TIPS: You can make this project yourself!
