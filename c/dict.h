@@ -1,3 +1,8 @@
+// this is not a really a dict
+// this is a link list that have no duplicate key
+// hash will be better but link list is easy
+// hope you help me change this
+
 typedef struct dictnode
 {
   char *key;
