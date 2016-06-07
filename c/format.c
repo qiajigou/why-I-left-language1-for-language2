@@ -3,6 +3,26 @@
 #include <string.h>
 #include "dict.h"
 
+int check_block_is_open(char *template)
+{
+    int block_open = 0;
+
+    for ( int i=0; i < strlen(template); i++ )
+    {
+        if ( template[i] == '{' )
+        {
+            block_open += 1;
+        }
+
+        if ( template[i] == '}' )
+        {
+            block_open -= 1;
+        }
+    }
+
+    return block_open;
+}
+
 char *replace(char *template, dict *d)
 {
     int si = 0;
