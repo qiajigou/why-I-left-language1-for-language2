@@ -11,12 +11,12 @@ int main(int argc, char *argv[]) {
 
   int c;
 
-  char *lan0 = "C";
-  char *lan1 = "Python";
-  char *lan2 = "Java";
-  char *lan3 = "GO";
-  char *template_path = "templates/en/article.md";
-  char *lan1_projects = "tornado Flask";
+  char *lan0 = "=C";
+  char *lan1 = "=Python";
+  char *lan2 = "=Java";
+  char *lan3 = "=GO";
+  char *template_path = "=templates/en/article.md";
+  char *lan1_projects = "=tornado Flask";
   char *output = NULL;
 
   while ((c = getopt (argc, argv, "0:1:2:3:t:p:o")) != -1)
@@ -48,6 +48,14 @@ int main(int argc, char *argv[]) {
         break;
     }
   }
+
+  ++lan0;
+  ++lan1;
+  ++lan2;
+  ++lan3;
+  ++template_path;
+  ++lan1_projects;
+  ++output;
 
   char *template = read_template(template_path);
 
