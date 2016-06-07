@@ -39,7 +39,7 @@ def read_config():
         '-p',
         '--lan1projects', type=str, nargs='+', default=['Spring MVC',
                                                         'Tomcat'],
-        help='List the projects you was working on in language1'
+        help='List the projects you was working on with language1'
     )
     parser.add_argument(
         '-o',
