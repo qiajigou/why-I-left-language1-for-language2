@@ -104,7 +104,6 @@ int main(int argc, char *argv[]) {
 
   printf("%s\n", replaced);
 
-  free(replaced);
   dict_destory(d);
   return 0;
 }
