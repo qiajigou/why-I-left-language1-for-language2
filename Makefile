@@ -35,5 +35,8 @@ install: $(BINS)
 uninstall:
 	$(foreach c, $(BINS), $(RM) $(PREFIX)/bin/$(c);)
 
+test:
+	@./test.sh
+
 $(BINS): $(SRC) $(OBJS)
 	gcc $(CFLAGS) -o $@ $^
