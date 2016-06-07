@@ -65,9 +65,9 @@ def read_helloworld(language):
     hello_world_path = CURRENT_DIR + '/hello-world/' + prefix + '/'
     hello_world_full_path = ''
     for f in os.listdir(hello_world_path):
-        f = f.lower()
+        t = f.lower()
         try:
-            lan, ext = f.split('.')
+            lan, ext = t.split('.')
             if lan == language:
                 hello_world_full_path = hello_world_path + f
                 break
