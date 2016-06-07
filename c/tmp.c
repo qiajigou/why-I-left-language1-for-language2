@@ -77,6 +77,8 @@ int compare(char *language, char* language_file)
   {
     r = 1;
   }
+  free(lan);
+  free(lf);
   return r;
 }
 
@@ -129,6 +131,8 @@ char *search_by_language(char *language)
     strcpy(fp, lf);
     strcat(fp, fd);
   }
+
+  free(c);
   return fp;
 }
 
@@ -144,5 +148,6 @@ char *read_helloworld(char *language)
   {
     printf("path is null!");
   }
+  free(path);
   return hello;
 }
