@@ -62,4 +62,5 @@ target/
 .ipynb_checkpoints
 c/wuliao
 c/wuliao.dSYM
+wuliao.dSYM
 *.o
