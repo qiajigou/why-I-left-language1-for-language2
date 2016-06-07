@@ -63,4 +63,5 @@ target/
 c/wuliao
 c/wuliao.dSYM
 wuliao.dSYM
+wuliao
 *.o
