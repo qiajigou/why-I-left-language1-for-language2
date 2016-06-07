@@ -12,11 +12,11 @@ int main(int argc, char *argv[]) {
   int c;
 
   char *lan0 = "=C";
-  char *lan1 = "=Python";
-  char *lan2 = "=Java";
-  char *lan3 = "=GO";
+  char *lan1 = "=Java";
+  char *lan2 = "=Python";
+  char *lan3 = "=Python3";
   char *template_path = "=templates/en/article.md";
-  char *lan1_projects = "=tornado Flask";
+  char *lan1_projects = "=Spring MVC, Tomcat";
   char *output = NULL;
 
   while ((c = getopt (argc, argv, "0:1:2:3:t:p:o")) != -1)

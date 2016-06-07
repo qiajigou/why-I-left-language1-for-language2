@@ -33,7 +33,7 @@ TIPS: You can make this project yourself!
 
 # Output
 
-I am a big fan of Java and one of its early adopters, having been disappointed with the utter failures of C. I have been an avid contributor to many open source projects such as Springs MVC, Tomcat. However, after using Java for over 5 years, I have been dealing with minor technical flaws. At first, I ignored and even tolerated these flaws, but ultimately, I was forced to confront reality. I could not live with these flaws, and since Java is a mature language, it will be difficult, if not impossible, to actually fix these flaws.
+I am a big fan of Java and one of its early adopters, having been disappointed with the utter failures of C. I have been an avid contributor to many open source projects such as Spring MVC, Tomcat. However, after using Java for over 5 years, I have been dealing with minor technical flaws. At first, I ignored and even tolerated these flaws, but ultimately, I was forced to confront reality. I could not live with these flaws, and since Java is a mature language, it will be difficult, if not impossible, to actually fix these flaws.
 
 I also resented the opinions that Java took. When I first used those languages, I thought those opinions were a fresh breath of air. I would constantly defend those opinions on Hacker News, because I thought that these opinions would promote good coding practices and would ulitmately lead to higher productivity. After 5 years of coding though, I realized that those opinions may have been slightly flawed.
 
@@ -43,12 +43,12 @@ Let me show you an example to prove my point.
 
 Here is an example of a “Hello World” program in Java:
 
-```
+```Java
 
 public class Java {
-	public static void main(String[] args) {
-		System.out.println("Hello World");
-	}
+    public static void main(String[] args) {
+        System.out.println("Hello World");
+    }
 }
 
 ```
@@ -57,7 +57,7 @@ You can see why I was drawn to this language. Its syntatic sugar was beautiful. 
 
 And here’s an example of “Hello World” in Python:
 
-```
+```Python
 
 #!/usr/bin/env python
 print "Hello World"
@@ -66,10 +66,10 @@ print "Hello World"
 
 You can see how easily readable and maintainable Python is over Java. Its syntax is just as elegant as Java, but there’s no magic involved. Everything that I need to know is right there, ready to be understood in an easy-to-digest fashion. There’s no fighting with the language here, just me working with my trusty new tool.
 
-Always use the best tool for the job. That’s why I have chosen to use Python for all my obscure side-projects. It will likely not have any technical flaws whatsoever, nor will its opinions ever turn out to be wrong. And, in the rare case that Python disappoints me…well, there’s always GO…
-
-Do you want a website for this projects?
+Always use the best tool for the job. That’s why I have chosen to use Python for all my obscure side-projects. It will likely not have any technical flaws whatsoever, nor will its opinions ever turn out to be wrong. And, in the rare case that Python disappoints me…well, there’s always Python3…
 
 # Contribute
+
+Do you want a website for this projects?
 
 Feel free to give PR. :D
