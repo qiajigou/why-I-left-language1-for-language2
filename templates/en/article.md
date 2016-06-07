@@ -8,7 +8,7 @@ Let me show you an example to prove my point.
 
 Here is an example of a “Hello World” program in {language1}:
 
-```
+```{language1}
 
 {language1_hello_world}
 ```
@@ -17,7 +17,7 @@ You can see why I was drawn to this language. Its syntatic sugar was beautiful. 
 
 And here’s an example of “Hello World” in {language2}:
 
-```
+```{language2}
 
 {language2_hello_world}
 ```

@@ -27,7 +27,7 @@ def read_config():
     )
     parser.add_argument(
         '-3',
-        '--lan3', type=str, default='GO',
+        '--lan3', type=str, default='Python3',
         help='If that language also disappointed you We have another choise...'
     )
     parser.add_argument(
@@ -37,7 +37,7 @@ def read_config():
     )
     parser.add_argument(
         '-p',
-        '--lan1projects', type=str, nargs='+', default=['Springs MVC',
+        '--lan1projects', type=str, nargs='+', default=['Spring MVC',
                                                         'Tomcat'],
         help='List the projects you was working on in language1'
     )
