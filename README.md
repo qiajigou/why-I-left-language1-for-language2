@@ -34,13 +34,13 @@ Yes! We are so boring that we wrote this project by C, this is really... I don't
 OK, Just enjoy yourself!
 
 ```
-./wuliao -1 Java -2 Python -3 Python3
+wuliao -1 Java -2 Python -3 Python3
 ```
 
 Add your templates!
 
 ```
-./wuliao -1 Java -2 Python -3 Python3 -t templates/en/justno.md -w hello-world/
+wuliao -1 Java -2 Python -3 Python3 -t templates/en/justno.md -w hello-world/
 ```
 
 **TIPS**: You can make this project yourself!
