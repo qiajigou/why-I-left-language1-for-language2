@@ -82,10 +82,39 @@ int compare(char *language, char* language_file)
   return r;
 }
 
+char *make_path_full(char *path)
+{
+  int len = strlen(path);
+  char *full_path;
+
+  if (path[len-1] != '/')
+  {
+    full_path = malloc(len + 1);
+    for (int i=0; i<len; i++)
+    {
+      full_path[i] = path[i];
+    }
+    full_path[len] = '/';
+    full_path[len+1] = '\0';
+  }
+  else
+  {
+    full_path = malloc(len);
+    for (int i=0; i<len; i++)
+    {
+      full_path[i] = path[i];
+    }
+    full_path[len] = '\0';
+  }
+
+  return full_path;
+}
+
 char *search_by_language(char *language, char* hello_folder_path)
 {
+  char* full_path = make_path_full(hello_folder_path);
   char *c = firstofchararry(language);
-  char *folder = hello_folder_path;
+  char *folder = full_path;
   char *e = "/\0";
   char *fd = NULL;
   int folder_size = strlen(folder);
@@ -135,6 +164,7 @@ char *search_by_language(char *language, char* hello_folder_path)
   }
 
   free(c);
+  free(full_path);
   return fp;
 }
 
@@ -145,10 +175,6 @@ char *read_helloworld(char *language, char* hello_folder_path)
   if (path)
   {
     hello = read_template(path);
-  }
-  else
-  {
-    printf("path is null!\n");
   }
   free(path);
   return hello;
