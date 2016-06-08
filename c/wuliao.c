@@ -16,7 +16,8 @@ void show_help()
   printf("-3\t%s\n", "-3=Python3 -> If language2 you don't like, there still a chance");
   printf("-t\t%s\n", "-t=template_path -> Customized template path");
   printf("-p\t%s\n", "-p=Tomecat -> Project you was working on with language1");
-  printf("-h\t%s\n", "-h -> Show this help");
+  printf("-w\t%s\n", "-w=hello-world folder path");
+  printf("-h\t%s\n", "-> Show this help");
   printf("\n");
   printf("%s\n", "Example: ./wuliao -1=Java -2=Python -3=Python3 -t=templates/en/justno.md");
   printf(":)\n");
@@ -33,10 +34,11 @@ int main(int argc, char *argv[]) {
   char *lan2 = "=Python";
   char *lan3 = "=Python3";
   char *template_path = "=templates/en/article.md";
+  char *hello_folder_path = "=hello-world/";
   char *lan1_projects = "=Spring MVC, Tomcat";
   char *output = NULL;
 
-  while ((c = getopt (argc, argv, "0:1:2:3:t:p:o:h")) != -1)
+  while ((c = getopt (argc, argv, "0:1:2:3:t:p:o:w:h")) != -1)
   {
     switch (c)
     {
@@ -61,6 +63,9 @@ int main(int argc, char *argv[]) {
       case 'o':
         output = optarg;
         break;
+      case 'w':
+        hello_folder_path = optarg;
+        break;
       case 'h':
         show_help();
         return 0;
@@ -77,6 +82,7 @@ int main(int argc, char *argv[]) {
   ++template_path;
   ++lan1_projects;
   ++output;
+  ++hello_folder_path;
 
   char *template = read_template(template_path);
   int err = check_block_is_open(template);
@@ -95,8 +101,8 @@ int main(int argc, char *argv[]) {
 
   dict_insert(d, "project_names", lan1_projects);
 
-  char *lan1_hello = read_helloworld(lan1);
-  char *lan2_hello = read_helloworld(lan2);
+  char *lan1_hello = read_helloworld(lan1, hello_folder_path);
+  char *lan2_hello = read_helloworld(lan2, hello_folder_path);
 
   dict_insert(d, "language1_hello_world", lan1_hello);
   dict_insert(d, "language2_hello_world", lan2_hello);

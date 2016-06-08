@@ -82,13 +82,16 @@ int compare(char *language, char* language_file)
   return r;
 }
 
-char *search_by_language(char *language)
+char *search_by_language(char *language, char* hello_folder_path)
 {
   char *c = firstofchararry(language);
-  char *folder = "./hello-world/";
-  char *e = "/";
+  char *folder = hello_folder_path;
+  char *e = "/\0";
   char *fd = NULL;
-  char *lf = malloc(strlen(folder) + strlen(e) + strlen(c) + 1);
+  int folder_size = strlen(folder);
+  int e_size = strlen(e);
+  int c_size = strlen(c);
+  char *lf = malloc(folder_size + e_size + c_size + 1);
 
   strcpy(lf, folder);
   strcat(lf, c);
@@ -111,7 +114,6 @@ char *search_by_language(char *language)
         condition = 0;
         break;
       }
-
       int cpr = compare(language, ep->d_name);
       if ( cpr )
       {
@@ -136,9 +138,9 @@ char *search_by_language(char *language)
   return fp;
 }
 
-char *read_helloworld(char *language)
+char *read_helloworld(char *language, char* hello_folder_path)
 {
-  char *path = search_by_language(language);
+  char *path = search_by_language(language, hello_folder_path);
   char *hello = NULL;
   if (path)
   {
@@ -146,7 +148,7 @@ char *read_helloworld(char *language)
   }
   else
   {
-    printf("path is null!");
+    printf("path is null!\n");
   }
   free(path);
   return hello;
