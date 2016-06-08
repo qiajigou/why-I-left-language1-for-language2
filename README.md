@@ -6,11 +6,20 @@ Origin idea from 《[Why I Left Language1 For Language2](https://medium.com/@igo
 
 # Install
 
+Init submodule
+
 ```
-make && make install
+git submodule init
+git submodule update
 ```
 
-or Just checkout this project and run.
+These commands will checkout the hello-world folder.
+
+Just checkout this project and run.
+
+```
+make && ./wuliao
+```
 
 # wuliao(1)
 
