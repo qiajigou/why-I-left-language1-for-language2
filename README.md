@@ -34,10 +34,35 @@ OK, Just enjoy yourself!
 Add your templates!
 
 ```
-./wuliao -1=Java -2=Python -3=Python3 -t=templates/en/justno.md
+./wuliao -1=Java -2=Python -3=Python3 -t=templates/en/justno.md -w=hello-world/
+```
+
+**TODO**: This program should run outside the project folder, right now you could parse **template folder path** and **hello-world folder** path.
+
+```
+make && make install
+wuliao -t=/fullpath/templates/en/justno.md -w=/fullpath/hell-world/
 ```
 
 **TIPS**: You can make this project yourself!
+
+# Help
+
+```
+Why I left language1 for language2
+
+-0  -0=C -> Language that you was used bug gived up
+-1  -1=Java -> Language that you used but gona leave this
+-2  -2=Python -> Language that you are going to use and love this
+-3  -3=Python3 -> If language2 you don't like, there still a chance
+-t  -t=template_path -> Customized template path
+-p  -p=Tomecat -> Project you was working on with language1
+-w  -w=hello-world folder path
+-h  -> Show this help
+
+Example: ./wuliao -1=Java -2=Python -3=Python3 -t=templates/en/justno.md
+:)
+```
 
 # Python
 
