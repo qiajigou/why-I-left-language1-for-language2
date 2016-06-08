@@ -29,10 +29,18 @@
 <h1>
 <a id="install" class="anchor" href="#install" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install</h1>
 
-<pre><code>make &amp;&amp; make install
+<p>Init submodule</p>
+
+<pre><code>git submodule init
+git submodule update
 </code></pre>
 
-<p>or Just checkout this project and run.</p>
+<p>These commands will checkout the hello-world folder.</p>
+
+<p>Just checkout this project and run.</p>
+
+<pre><code>make &amp;&amp; ./wuliao
+</code></pre>
 
 <h1>
 <a id="wuliao1" class="anchor" href="#wuliao1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>wuliao(1)</h1>
@@ -46,10 +54,34 @@
 
 <p>Add your templates!</p>
 
-<pre><code>./wuliao -1=Java -2=Python -3=Python3 -t=templates/en/justno.md
+<pre><code>./wuliao -1=Java -2=Python -3=Python3 -t=templates/en/justno.md -w=hello-world/
+</code></pre>
+
+<p><strong>TODO</strong>: This program should run outside the project folder, right now you could parse <strong>template folder path</strong> and <strong>hello-world folder</strong> path.</p>
+
+<pre><code>make &amp;&amp; make install
+wuliao -t=/fullpath/templates/en/justno.md -w=/fullpath/hell-world/
 </code></pre>
 
 <p><strong>TIPS</strong>: You can make this project yourself!</p>
+
+<h1>
+<a id="help" class="anchor" href="#help" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Help</h1>
+
+<pre><code>Why I left language1 for language2
+
+-0  -0=C -&gt; Language that you was used bug gived up
+-1  -1=Java -&gt; Language that you used but gona leave this
+-2  -2=Python -&gt; Language that you are going to use and love this
+-3  -3=Python3 -&gt; If language2 you don't like, there still a chance
+-t  -t=template_path -&gt; Customized template path
+-p  -p=Tomecat -&gt; Project you was working on with language1
+-w  -w=hello-world folder path
+-h  -&gt; Show this help
+
+Example: ./wuliao -1=Java -2=Python -3=Python3 -t=templates/en/justno.md
+:)
+</code></pre>
 
 <h1>
 <a id="python" class="anchor" href="#python" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Python</h1>
