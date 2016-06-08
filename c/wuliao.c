@@ -137,7 +137,7 @@ int main(int argc, char *argv[]) {
   if ( err )
   {
     printf("ERR: template in %s is invalid, maybe lost { or }?\n",
-      template_path);
+      real_template_path);
     return 1;
   }
 
