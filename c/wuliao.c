@@ -161,6 +161,8 @@ int main(int argc, char *argv[]) {
   printf("%s\n", replaced);
 
   free(replaced);
+  free(real_hello_path);
+  free(real_template_path);
   dict_destory(d);
   return 0;
 }
