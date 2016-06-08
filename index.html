@@ -42,6 +42,11 @@ git submodule update
 <pre><code>make &amp;&amp; ./wuliao
 </code></pre>
 
+<p>Or</p>
+
+<pre><code>make install
+</code></pre>
+
 <h1>
 <a id="wuliao1" class="anchor" href="#wuliao1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>wuliao(1)</h1>
 
@@ -49,18 +54,12 @@ git submodule update
 
 <p>OK, Just enjoy yourself!</p>
 
-<pre><code>./wuliao -1=Java -2=Python -3=Python3
+<pre><code>./wuliao -1 Java -2 Python -3 Python3
 </code></pre>
 
 <p>Add your templates!</p>
 
-<pre><code>./wuliao -1=Java -2=Python -3=Python3 -t=templates/en/justno.md -w=hello-world/
-</code></pre>
-
-<p><strong>TODO</strong>: This program should run outside the project folder, right now you could parse <strong>template folder path</strong> and <strong>hello-world folder</strong> path.</p>
-
-<pre><code>make &amp;&amp; make install
-wuliao -t=/fullpath/templates/en/justno.md -w=/fullpath/hell-world/
+<pre><code>./wuliao -1 Java -2 Python -3 Python3 -t templates/en/justno.md -w hello-world/
 </code></pre>
 
 <p><strong>TIPS</strong>: You can make this project yourself!</p>
@@ -70,16 +69,16 @@ wuliao -t=/fullpath/templates/en/justno.md -w=/fullpath/hell-world/
 
 <pre><code>Why I left language1 for language2
 
--0  -0=C -&gt; Language that you was used bug gived up
--1  -1=Java -&gt; Language that you used but gona leave this
--2  -2=Python -&gt; Language that you are going to use and love this
--3  -3=Python3 -&gt; If language2 you don't like, there still a chance
--t  -t=template_path -&gt; Customized template path
--p  -p=Tomecat -&gt; Project you was working on with language1
--w  -w=hello-world folder path
--h  -&gt; Show this help
+-0  -0 C -&gt; Language that you was used bug gived up
+-1  -1 Java -&gt; Language that you used but gona leave this
+-2  -2 Python -&gt; Language that you are going to use and love this
+-3  -3 Python3 -&gt; If language2 you don't like, there still a chance
+-t  -t template_path -&gt; Customized template path
+-p  -p Tomecat -&gt; Project you was working on with language1
+-w  -w Set hello-world folder path
+-h  -h Show this help
 
-Example: ./wuliao -1=Java -2=Python -3=Python3 -t=templates/en/justno.md
+Example: ./wuliao -1 Java -2 Python -3 Python3 -t templates/en/justno.md
 :)
 </code></pre>
 
