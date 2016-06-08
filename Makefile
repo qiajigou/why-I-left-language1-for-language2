@@ -30,6 +30,9 @@ all: $(BINS)
 
 install: $(BINS)
 	$(MKDIR) $(PREFIX)/bin
+	$(MKDIR) $(HOME)/.wuliao
+	$(CP) -r templates $(HOME)/.wuliao 2>/dev/null | true
+	$(CP) -r hello-world $(HOME)/.wuliao 2>/dev/null | true
 	$(foreach c, $(BINS), $(CP) $(c) $(PREFIX)/bin/$(c);)
 
 uninstall:

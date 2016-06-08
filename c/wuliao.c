@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <getopt.h>
 #include <sys/stat.h>
 
@@ -34,18 +35,47 @@ int check_path(char *path)
   return 0;
 }
 
+char *get_config_path(char* path_name, char *path)
+{
+  int err = check_path(path);
+  int len = strlen(path);
+  char *HOME = getenv("HOME");
+  int home_len = strlen(HOME);
+  char *real_path;
+  char *slash = "/.wuliao/";
+  int slash_len = strlen(slash);
+
+  if ( err )
+  {
+    int total_size = len + home_len + slash_len + 1;
+    real_path = (char *)malloc(total_size);
+    strcpy(real_path, HOME);
+    strcat(real_path, slash);
+    strcat(real_path, path);
+    real_path[total_size - 1] = '\0';
+  }
+  else
+  {
+    real_path = (char *)malloc(len + 1);
+    strcpy(real_path, path);
+    real_path[len + 1] = '\0';
+  }
+
+  return real_path;
+}
+
 int main(int argc, char *argv[]) {
   dict *d = dict_create();
 
   int c;
 
-  char *lan0 = "=C";
-  char *lan1 = "=Java";
-  char *lan2 = "=Python";
-  char *lan3 = "=Python3";
-  char *template_path = "=templates/en/article.md";
-  char *hello_folder_path = "=hello-world/";
-  char *lan1_projects = "=Spring MVC, Tomcat";
+  char *lan0 = "C";
+  char *lan1 = "Java";
+  char *lan2 = "Python";
+  char *lan3 = "Python3";
+  char *template_path = "templates/en/article.md";
+  char *hello_folder_path = "hello-world";
+  char *lan1_projects = "Spring MVC, Tomcat";
   char *output = NULL;
 
   while ((c = getopt (argc, argv, "0:1:2:3:t:p:o:w:h")) != -1)
@@ -85,32 +115,25 @@ int main(int argc, char *argv[]) {
     }
   }
 
-  ++lan0;
-  ++lan1;
-  ++lan2;
-  ++lan3;
-  ++template_path;
-  ++lan1_projects;
-  ++output;
-  ++hello_folder_path;
-
-  int prr = check_path(hello_folder_path);
+  char * real_hello_path = get_config_path("hello-world", hello_folder_path);
+  int prr = check_path(real_hello_path);
 
   if ( prr )
   {
-    printf("hello-world template path=%s unavaliable\n", hello_folder_path);
+    printf("hello-world template path=%s unavaliable\n", real_hello_path);
     return 1;
   }
 
-  prr = check_path(template_path);
+  char *real_template_path = get_config_path("template", template_path);
+  prr = check_path(real_template_path);
 
   if ( prr )
   {
-    printf("template path=%s unavaliable\n", template_path);
+    printf("template path=%s unavaliable\n", real_template_path);
     return 1;
   }
 
-  char *template = read_template(template_path);
+  char *template = read_template(real_template_path);
   int err = check_block_is_open(template);
 
   if ( err )
@@ -127,8 +150,8 @@ int main(int argc, char *argv[]) {
 
   dict_insert(d, "project_names", lan1_projects);
 
-  char *lan1_hello = read_helloworld(lan1, hello_folder_path);
-  char *lan2_hello = read_helloworld(lan2, hello_folder_path);
+  char *lan1_hello = read_helloworld(lan1, real_hello_path);
+  char *lan2_hello = read_helloworld(lan2, real_hello_path);
 
   dict_insert(d, "language1_hello_world", lan1_hello);
   dict_insert(d, "language2_hello_world", lan2_hello);
