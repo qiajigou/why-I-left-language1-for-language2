@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <getopt.h>
+#include <sys/stat.h>
 
 #include "dict.h"
 #include "tmp.h"
@@ -23,6 +24,15 @@ void show_help()
   printf(":)\n");
 }
 
+int check_path(char *path)
+{
+  struct stat s;
+  int err = stat(path, &s);
+  if(-1 == err) {
+    return 1;
+  }
+  return 0;
+}
 
 int main(int argc, char *argv[]) {
   dict *d = dict_create();
@@ -83,6 +93,22 @@ int main(int argc, char *argv[]) {
   ++lan1_projects;
   ++output;
   ++hello_folder_path;
+
+  int prr = check_path(hello_folder_path);
+
+  if ( prr )
+  {
+    printf("hello-world template path=%s unavaliable\n", hello_folder_path);
+    return 1;
+  }
+
+  prr = check_path(template_path);
+
+  if ( prr )
+  {
+    printf("template path=%s unavaliable\n", template_path);
+    return 1;
+  }
 
   char *template = read_template(template_path);
   int err = check_block_is_open(template);
