@@ -76,7 +76,6 @@ int main(int argc, char *argv[]) {
   char *template_path = "templates/en/article.md";
   char *hello_folder_path = "hello-world";
   char *lan1_projects = "Spring MVC, Tomcat";
-  char *output = NULL;
 
   while ((c = getopt (argc, argv, "0:1:2:3:t:p:o:w:h")) != -1)
   {
@@ -101,7 +100,6 @@ int main(int argc, char *argv[]) {
         lan1_projects = optarg;
         break;
       case 'o':
-        output = optarg;
         break;
       case 'w':
         hello_folder_path = optarg;
