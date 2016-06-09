@@ -50,8 +50,8 @@ char *replace(char *template, dict *d)
         {
             // end of the block
             ei = i;
-            int range = ei - si - 1;
-            char *tmp = (char *)malloc(range);
+            int range = ei - si;
+            char *tmp = (char *)malloc(range * sizeof(char*));
             int it = 0;
 
             // get the key of the dict
@@ -74,11 +74,11 @@ char *replace(char *template, dict *d)
                 }
             }
 
+            free(tmp);
+
             si = 0;
             ei = 0;
             inblock = 0;
-            // clear arrary
-            free(tmp);
             continue;
         }
 
