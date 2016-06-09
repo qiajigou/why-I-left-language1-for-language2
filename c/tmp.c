@@ -41,7 +41,7 @@ char *read_template(char* template_path)
 
 char *strtolower(char *s)
 {
-  char *d = (char *)malloc(strlen(s) * sizeof(char*));
+  char *d = (char *)malloc((strlen(s)) * sizeof(char*));
   int i = 0;
   for(i = 0; s[i]; i++){
     d[i] = tolower(s[i]);
@@ -72,10 +72,10 @@ int compare(char *language, char* language_file)
   if ( lan && lf)
   {
     cpr = strcmp(lan, lf);
-  }
-  if ( cpr == 0 )
-  {
-    r = 1;
+    if ( cpr == 0 )
+    {
+      r = 1;
+    }
   }
   free(lan);
   free(lf);
@@ -89,7 +89,7 @@ char *make_path_full(char *path)
 
   if (path[len-1] != '/')
   {
-    full_path = malloc((len+1) * sizeof(char*));
+    full_path = malloc((len + 1) * sizeof(char*));
     for (int i=0; i<len; i++)
     {
       full_path[i] = path[i];
@@ -134,7 +134,7 @@ char *search_by_language(char *language, char* hello_folder_path)
 
   if ( dp != NULL )
   {
-    while ( fd )
+    while ( 1 )
     {
       ep = readdir(dp);
 
@@ -148,16 +148,12 @@ char *search_by_language(char *language, char* hello_folder_path)
         fd = ep->d_name;
         break;
       }
-
+      ep = readdir(dp);
     }
     closedir(dp);
   }
 
   char *fp = NULL;
-
-  free(c);
-  free(lf);
-  free(full_path);
 
   if ( fd )
   {
@@ -165,9 +161,12 @@ char *search_by_language(char *language, char* hello_folder_path)
     fp = (char *)malloc(size * sizeof(char*));
     strcpy(fp, lf);
     strcat(fp, fd);
-    return fp;
   }
-  return NULL;
+
+  free(c);
+  free(lf);
+  free(full_path);
+  return fp;
 }
 
 char *read_helloworld(char *language, char* hello_folder_path)
