@@ -139,7 +139,7 @@ char *search_by_language(char *language, char* hello_folder_path)
     {
       if ( ep->d_name[0] == '.' )
       {
-	continue;
+        continue;
       }
       if ( compare(language, ep->d_name) )
       {
