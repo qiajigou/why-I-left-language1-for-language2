@@ -6,7 +6,7 @@
 
 dictnode *node_create(char *key, char *value)
 {
-  dictnode *n = calloc(1, sizeof(dictnode));
+  struct dictnode *n = malloc(sizeof(struct dictnode));
   n->key = key;
   n->value = value;
   n->next = NULL;
@@ -27,8 +27,9 @@ void dict_destory(dict *d)
     dictnode *n = d->nodelist;
     while ( n )
     {
-      free(n);
+      dictnode *tmp = n;
       n = n->next;
+      free(tmp);
     }
   }
   free(d);
@@ -87,7 +88,6 @@ char *get_value_by_key(dict *d, char *key)
 {
   if ( !d->nodelist )
   {
-    printf("%s\n", "nothing");
     return NULL;
   }
 

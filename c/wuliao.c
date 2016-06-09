@@ -47,18 +47,18 @@ char *get_config_path(char* path_name, char *path)
 
   if ( err )
   {
-    int total_size = len + home_len + slash_len + 1;
-    real_path = (char *)malloc(total_size);
+    int total_size = len + home_len + slash_len;
+    real_path = (char *)malloc(total_size * sizeof(char*));
     strcpy(real_path, HOME);
     strcat(real_path, slash);
     strcat(real_path, path);
-    real_path[total_size - 1] = '\0';
+    // real_path[total_size] = '\0';
   }
   else
   {
-    real_path = (char *)malloc(len + 1);
+    real_path = (char *)malloc(len * sizeof(char*));
     strcpy(real_path, path);
-    real_path[len + 1] = '\0';
+    real_path[len] = '\0';
   }
 
   return real_path;
@@ -159,8 +159,11 @@ int main(int argc, char *argv[]) {
   printf("%s\n", replaced);
 
   free(replaced);
+  free(template);
   free(real_hello_path);
   free(real_template_path);
+  free(lan1_hello);
+  free(lan2_hello);
   dict_destory(d);
   return 0;
 }

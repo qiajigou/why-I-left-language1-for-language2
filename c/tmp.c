@@ -27,7 +27,7 @@ char *read_template(char* template_path)
     exit(1);
   }
 
-  if( 1!=fread( buf , size, 1 , fp) ) {
+  if( 1 != fread( buf , size, 1 , fp) ) {
     fclose(fp);
     free(buf);
     fputs("entire read fails", stderr);
@@ -41,7 +41,7 @@ char *read_template(char* template_path)
 
 char *strtolower(char *s)
 {
-  char *d = (char *)malloc(strlen(s+1));
+  char *d = (char *)malloc((strlen(s)) * sizeof(char*));
   int i = 0;
   for(i = 0; s[i]; i++){
     d[i] = tolower(s[i]);
@@ -52,7 +52,7 @@ char *strtolower(char *s)
 
 char *firstofchararry(char *s)
 {
-  char *c = (char *)malloc(2);
+  char *c = (char *)malloc(2 * sizeof(char*));
   int i = 0;
   for(i=0; i<1; i++){
     c[i] = tolower(s[i]);
@@ -72,10 +72,10 @@ int compare(char *language, char* language_file)
   if ( lan && lf)
   {
     cpr = strcmp(lan, lf);
-  }
-  if ( cpr == 0 )
-  {
-    r = 1;
+    if ( cpr == 0 )
+    {
+      r = 1;
+    }
   }
   free(lan);
   free(lf);
@@ -89,7 +89,7 @@ char *make_path_full(char *path)
 
   if (path[len-1] != '/')
   {
-    full_path = malloc(len + 1);
+    full_path = malloc((len + 1) * sizeof(char*));
     for (int i=0; i<len; i++)
     {
       full_path[i] = path[i];
@@ -99,7 +99,7 @@ char *make_path_full(char *path)
   }
   else
   {
-    full_path = malloc(len);
+    full_path = malloc(len * sizeof(char*));
     for (int i=0; i<len; i++)
     {
       full_path[i] = path[i];
@@ -115,16 +115,18 @@ char *search_by_language(char *language, char* hello_folder_path)
   char* full_path = make_path_full(hello_folder_path);
   char *c = firstofchararry(language);
   char *folder = full_path;
-  char *e = "/\0";
+  char *e = "/";
   char *fd = NULL;
   int folder_size = strlen(folder);
   int e_size = strlen(e);
   int c_size = strlen(c);
-  char *lf = malloc(folder_size + e_size + c_size + 1);
+  int total_size = folder_size + e_size + c_size + 1;
+  char *lf = (char *)malloc((total_size) * sizeof(char*));
 
   strcpy(lf, folder);
   strcat(lf, c);
   strcat(lf, e);
+  lf[total_size] = '\0';
 
   DIR *dp;
   struct dirent *ep;
@@ -133,38 +135,40 @@ char *search_by_language(char *language, char* hello_folder_path)
 
   if ( dp != NULL )
   {
-    int condition = 1;
-
-    while ( condition || fd )
+    while ((ep = readdir(dp)))
     {
-      ep = readdir(dp);
-
-      if (!ep) {
-        condition = 0;
-        break;
+      if ( ep->d_name[0] == '.' )
+      {
+	continue;
       }
-      int cpr = compare(language, ep->d_name);
-      if ( cpr )
+      if ( compare(language, ep->d_name) )
       {
         fd = ep->d_name;
         break;
       }
-
     }
-    (void) closedir(dp);
   }
 
   char *fp = NULL;
 
   if ( fd )
   {
-    fp = malloc(strlen(lf) + strlen(fd) + 1);
+    int size = strlen(lf) + strlen(fd) + 1;
+    fp = (char *)malloc(size * sizeof(char*));
     strcpy(fp, lf);
     strcat(fp, fd);
+    fp[size] = '\0';
   }
 
   free(c);
+  free(lf);
   free(full_path);
+
+  if (dp != NULL)
+  {
+    closedir(dp);
+  }
+
   return fp;
 }
 
