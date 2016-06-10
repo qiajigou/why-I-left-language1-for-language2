@@ -58,7 +58,6 @@ def _why(lan1='Java', lan2='Python'):
         language3='Python3',
         project_names=', '.join(['Spring MVC, Tomcat'])
     )
-    fmt = fmt.replace('\n', '<br/>')
     return t.format(lan1=lan1, lan2=lan2, fmt=fmt, title=title)
 
 
