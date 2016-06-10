@@ -4,6 +4,10 @@ Origin idea from [Why I Left Language1 For Language2](https://medium.com/@igorho
 
 [![Build Status](https://travis-ci.org/qiajigou/why-I-left-language1-for-language2.svg?branch=master)](https://travis-ci.org/qiajigou/why-I-left-language1-for-language2)
 
+# Run Online
+
+Visit [http://w.qiajigou.click](http://w.qiajigou.click) to run this program online. :)
+
 # Install
 
 Init submodule

@@ -22,7 +22,13 @@ def _why(lan1='Java', lan2='Python'):
     <link rel="stylesheet"
     href="http://guojing.me/style/style.css"
     type="text/css">
-    <title>why-I-left-{lan1}-for-{lan2}</title>
+    <title>why I left {lan1} for {lan2}</title>
+    <meta content="{title}" name="description"/>
+    <meta content="Programming,Language,Choice" name="keywords"/>
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="/why-I-left-{lan1}-for-{lan2}" />
+    <meta property="og:title" content="{title}" />
+    <meta property="og:description" content="This is {title}" />
     </head>
     <body>
     <div class="container" style="margin: 0px auto">
