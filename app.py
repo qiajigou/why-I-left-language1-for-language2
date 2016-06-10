@@ -20,7 +20,7 @@ def _why(lan1='Java', lan2='Python'):
     t = '''<html>
     <head>
     <link rel="stylesheet"
-    href="http://guojing.me/style/style.css"
+    href="http://guojing.me/style/qiajigou.css"
     type="text/css">
     <title>why I left {lan1} for {lan2}</title>
     <meta content="{title}" name="description"/>
