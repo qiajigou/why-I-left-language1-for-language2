@@ -19,6 +19,7 @@ def _why(lan1='Java', lan2='Python'):
     title = 'Why I left %s for %s' % (lan1, lan2)
     t = '''<html>
     <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet"
     href="http://guojing.me/style/qiajigou.css"
     type="text/css">
