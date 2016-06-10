@@ -6,7 +6,7 @@ Origin idea from [Why I Left Language1 For Language2](https://medium.com/@igorho
 
 # Run Online
 
-Visit [http://w.qiajigou.click](http://w.qiajigou.click) to run this program online. :)
+Visit [http://why.qiajigou.click](http://why.qiajigou.click) to run this program online. :)
 
 # Install
 
