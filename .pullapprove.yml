@@ -1,0 +1,9 @@
+approve_by_comment: true
+approve_regex: ^LGTM
+reject_regex: ^NO
+reset_on_push: false
+reviewers:
+  members:
+  - GuoJing
+  name: default
+  required: 1
