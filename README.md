@@ -2,7 +2,8 @@
 
 Origin idea from [Why I Left Language1 For Language2](https://medium.com/@igorhorst/why-i-left-language-1-for-language-2-1d2fa418cd4c#.jn9fhmhn8).
 
-[![Build Status](https://travis-ci.org/qiajigou/why-I-left-language1-for-language2.svg?branch=master)](https://travis-ci.org/qiajigou/why-I-left-language1-for-language2)
+[![Build Status](https://travis-ci.org/qiajigou/why-I-left-language1-for-language2.svg?branch=master)](https://travis-ci.org/qiajigou/why-I-left-language1-for-language2) [![Join the chat at https://gitter.im/qiajigou](https://badges.gitter.im/qiajigou.svg)](https://gitter.im/qiajigou?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 
 # Run Online
 
